@@ -1,0 +1,26 @@
+﻿修改conf.xml文件，说明文件如下：有问题联系CT:小禾
+========================================================================
+一、总体配制：
+<?xml version="1.0" encoding="utf-8"?>
+<OrderingModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <HostUserid>21028091</HostUserid>		--> 自己的CTID号
+    <Userids>21028091</Userids>			--> 接收者的CTID号，群发以[,](半角)分割，如：21028091,21028091	
+    <Title>标题</Title>				--> 标题（小窗口标题），中文字符不要超过15号，不然显示不全
+    <Content>发送的内容</Content>		--> 你想到简要的内容, 支持UBB代码（如果需要比较复杂的内容，联系CT:小禾）
+</OrderingModel>
+
+二、UBB例子
+UBB例子：
+<Content>
+--开始
+	[color=green]亲爱的[/color]
+	[color=red]朋友们[/color]
+	[url=http://www.baidu.com/]可以了支持UBB了[/url]
+--结束
+</Content>
+
+三、多文件配置说明：
+文件名任意，默认打开是conf.xml，
+
+如果多配置，文件名任意，拖动配置文件到主程序打开。OK！
+
