@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddUserNotice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="toUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frameUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserNoticeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserNoticeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserHasLoginLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserHasLoginLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserHasLoginLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserIsOnLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserIsOnLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserIsOnLineResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUsersIsOnLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUsersIsOnLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUsersIsOnLineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFriendRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="toUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFriendRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFriendRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUserNoticeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserNotice" />
+  </wsdl:message>
+  <wsdl:message name="AddUserNoticeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserNoticeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserHasLoginLogSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserHasLoginLog" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserHasLoginLogSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserHasLoginLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnLineSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserIsOnLine" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnLineSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserIsOnLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUsersIsOnLineSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUsersIsOnLine" />
+  </wsdl:message>
+  <wsdl:message name="CheckUsersIsOnLineSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUsersIsOnLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFriendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserNoticeHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="toUserId" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="frameUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddUserNoticeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserHasLoginLogHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserHasLoginLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnLineHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckUsersIsOnLineHttpGetIn">
+    <wsdl:part name="userIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUsersIsOnLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendRequestHttpGetIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="toUserId" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendRequestHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="AddUserNoticeHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="toUserId" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="frameUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddUserNoticeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserHasLoginLogHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserHasLoginLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnLineHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckUsersIsOnLineHttpPostIn">
+    <wsdl:part name="userIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUsersIsOnLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendRequestHttpPostIn">
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="toUserId" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendRequestHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="ct_apiSoap">
+    <wsdl:operation name="AddUserNotice">
+      <wsdl:input message="tns:AddUserNoticeSoapIn" />
+      <wsdl:output message="tns:AddUserNoticeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断用户是否登陆过CT</wsdl:documentation>
+      <wsdl:input message="tns:CheckUserHasLoginLogSoapIn" />
+      <wsdl:output message="tns:CheckUserHasLoginLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <wsdl:input message="tns:CheckUserIsOnLineSoapIn" />
+      <wsdl:output message="tns:CheckUserIsOnLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <wsdl:input message="tns:CheckUsersIsOnLineSoapIn" />
+      <wsdl:output message="tns:CheckUsersIsOnLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <wsdl:input message="tns:AddFriendRequestSoapIn" />
+      <wsdl:output message="tns:AddFriendRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ct_apiHttpGet">
+    <wsdl:operation name="AddUserNotice">
+      <wsdl:input message="tns:AddUserNoticeHttpGetIn" />
+      <wsdl:output message="tns:AddUserNoticeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断用户是否登陆过CT</wsdl:documentation>
+      <wsdl:input message="tns:CheckUserHasLoginLogHttpGetIn" />
+      <wsdl:output message="tns:CheckUserHasLoginLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <wsdl:input message="tns:CheckUserIsOnLineHttpGetIn" />
+      <wsdl:output message="tns:CheckUserIsOnLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <wsdl:input message="tns:CheckUsersIsOnLineHttpGetIn" />
+      <wsdl:output message="tns:CheckUsersIsOnLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <wsdl:input message="tns:AddFriendRequestHttpGetIn" />
+      <wsdl:output message="tns:AddFriendRequestHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ct_apiHttpPost">
+    <wsdl:operation name="AddUserNotice">
+      <wsdl:input message="tns:AddUserNoticeHttpPostIn" />
+      <wsdl:output message="tns:AddUserNoticeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断用户是否登陆过CT</wsdl:documentation>
+      <wsdl:input message="tns:CheckUserHasLoginLogHttpPostIn" />
+      <wsdl:output message="tns:CheckUserHasLoginLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <wsdl:input message="tns:CheckUserIsOnLineHttpPostIn" />
+      <wsdl:output message="tns:CheckUserIsOnLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <wsdl:input message="tns:CheckUsersIsOnLineHttpPostIn" />
+      <wsdl:output message="tns:CheckUsersIsOnLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <wsdl:input message="tns:AddFriendRequestHttpPostIn" />
+      <wsdl:output message="tns:AddFriendRequestHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ct_apiSoap" type="tns:ct_apiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUserNotice">
+      <soap:operation soapAction="http://tempuri.org/AddUserNotice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <soap:operation soapAction="http://tempuri.org/CheckUserHasLoginLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <soap:operation soapAction="http://tempuri.org/CheckUserIsOnLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <soap:operation soapAction="http://tempuri.org/CheckUsersIsOnLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <soap:operation soapAction="http://tempuri.org/AddFriendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ct_apiSoap12" type="tns:ct_apiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUserNotice">
+      <soap12:operation soapAction="http://tempuri.org/AddUserNotice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserHasLoginLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserIsOnLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <soap12:operation soapAction="http://tempuri.org/CheckUsersIsOnLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/AddFriendRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ct_apiHttpGet" type="tns:ct_apiHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="AddUserNotice">
+      <http:operation location="/AddUserNotice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <http:operation location="/CheckUserHasLoginLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <http:operation location="/CheckUserIsOnLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <http:operation location="/CheckUsersIsOnLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <http:operation location="/AddFriendRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ct_apiHttpPost" type="tns:ct_apiHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="AddUserNotice">
+      <http:operation location="/AddUserNotice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserHasLoginLog">
+      <http:operation location="/CheckUserHasLoginLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnLine">
+      <http:operation location="/CheckUserIsOnLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsersIsOnLine">
+      <http:operation location="/CheckUsersIsOnLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriendRequest">
+      <http:operation location="/AddFriendRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ct_api">
+    <wsdl:port name="ct_apiSoap" binding="tns:ct_apiSoap">
+      <soap:address location="http://cctalkn.hujiang.com/api/ct_api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ct_apiSoap12" binding="tns:ct_apiSoap12">
+      <soap12:address location="http://cctalkn.hujiang.com/api/ct_api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ct_apiHttpGet" binding="tns:ct_apiHttpGet">
+      <http:address location="http://cctalkn.hujiang.com/api/ct_api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ct_apiHttpPost" binding="tns:ct_apiHttpPost">
+      <http:address location="http://cctalkn.hujiang.com/api/ct_api.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

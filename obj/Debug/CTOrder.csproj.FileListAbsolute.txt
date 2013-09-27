@@ -1,0 +1,5 @@
+E:\hj\src\app.class.hujiang.com\CTOrder\bin\Debug\CTOrder.exe.config
+E:\hj\src\app.class.hujiang.com\CTOrder\bin\Debug\CTOrder.exe
+E:\hj\src\app.class.hujiang.com\CTOrder\bin\Debug\CTOrder.pdb
+E:\hj\src\app.class.hujiang.com\CTOrder\obj\Debug\CTOrder.exe
+E:\hj\src\app.class.hujiang.com\CTOrder\obj\Debug\CTOrder.pdb
